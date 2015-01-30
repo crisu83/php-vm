@@ -1,0 +1,6 @@
+---
+# application tasks to be customized and to run after the main provision
+- name: ensure timezone is set in fpm php.ini
+  lineinfile: dest=/etc/php5/fpm/php.ini
+              regexp='date.timezone ='
+              line='date.timezone = {{ timezone }}'

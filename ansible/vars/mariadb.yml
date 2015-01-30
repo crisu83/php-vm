@@ -1,0 +1,5 @@
+mariadb:
+    root_password: root
+    user: vagrant
+    password: vagrant
+    database: db

@@ -1,0 +1,20 @@
+---
+- hosts: all
+  sudo: true
+  vars:
+    servername: yii_app.vb www.yii_app.vb
+    timezone: UTC
+    web_server: nginxphp
+  vars_files:
+    - vars/mariadb.yml
+    - vars/common.yml
+    - [ "vars/nginxphp.yml", "vars/ws_defaults.yml" ]
+  roles:
+    - init
+    - php5-cli
+    - nginx
+    - php5-fpm
+    - mariadb
+    - composer
+    - phpcommon
+    - app
