@@ -1,20 +1,24 @@
 server {
-    listen  80;
+    listen 80;
 
-    root {{ doc_root }};
+    root {{ web_root }};
     index index.html index.php;
 
-    server_name {{ servername }};
+    server_name {{ server_name }};
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;
+        server_tokens off;
+        {% for line in nginx.vhost_config %}
+          {{ line }};
+        {% endfor %}
     }
 
     error_page 404 /404.html;
 
     error_page 500 502 503 504 /50x.html;
         location = /50x.html {
-        root /usr/share/nginx/www;
+        root /usr/share/nginx/html;
     }
 
     location ~ \.php$ {

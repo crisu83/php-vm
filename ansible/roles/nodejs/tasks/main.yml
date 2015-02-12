@@ -1,0 +1,13 @@
+---
+- name: Setup NodeJS
+  sudo: yes
+  shell: curl -sL https://deb.nodesource.com/setup | bash -
+
+- name: Install NodeJS
+  sudo: yes
+  apt: pkg=nodejs state=latest
+
+- name: Install NPM Packages
+  sudo: yes
+  shell: npm install -g {{ item }}
+  with_items: nodejs.packages

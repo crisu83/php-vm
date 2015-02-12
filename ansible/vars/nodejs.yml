@@ -1,0 +1,3 @@
+---
+nodejs:
+  packages: ["bower","grunt-cli"]

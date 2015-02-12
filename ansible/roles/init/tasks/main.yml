@@ -8,10 +8,8 @@
   apt: pkg={{ item }} state=latest
   with_items:
     - curl
-    - git-core
-    - python-software-properties
-    - vim
     - wget
+    - python-software-properties
 
 - name: Add ppa Repository
   sudo: yes
@@ -28,7 +26,7 @@
 
 - name: Configure the timezone
   sudo: yes
-  template: src=timezone.tpl dest=/etc/timezone
+  template: src=timezone.j2 dest=/etc/timezone
 
 - name: More Configure the timezone
   sudo: yes

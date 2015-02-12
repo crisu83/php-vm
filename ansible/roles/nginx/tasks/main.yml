@@ -3,7 +3,13 @@
   sudo: yes
   apt: pkg=nginx state=latest
 
+- name: Create web root
+  shell: mkdir -p {{ web_root }}
+
+- name: Create dummy index.php
+  template: src=index.j2 dest={{ web_root }}/index.php
+
 - name: Change default nginx site
   sudo: yes
-  template: src={{ ws_template }} dest={{ ws_vhost_path }}/{{ ws_vhost_file }}
+  template: src={{ nginx.vhost_template }} dest={{ nginx.vhost_file }}
   notify: restart nginx

@@ -1,0 +1,5 @@
+---
+nginx:
+  vhost_file: /etc/nginx/sites-available/default
+  vhost_template: default.j2
+  vhost_config: ["sendfile off"]
