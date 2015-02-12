@@ -6,9 +6,6 @@
 - name: Create web root
   shell: mkdir -p {{ web_root }}
 
-- name: Create dummy index.php
-  template: src=index.j2 dest={{ web_root }}/index.php
-
 - name: Change default nginx site
   sudo: yes
   template: src={{ nginx.vhost_template }} dest={{ nginx.vhost_file }}

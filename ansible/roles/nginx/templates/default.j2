@@ -9,8 +9,8 @@ server {
     location / {
         try_files $uri $uri/ /index.php?$query_string;
         server_tokens off;
-        {% for line in nginx.vhost_config %}
-          {{ line }};
+        {% for statement in nginx.vhost_config %}
+            {{ statement }};
         {% endfor %}
     }
 
