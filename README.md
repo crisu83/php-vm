@@ -32,4 +32,8 @@ Follow these steps to setup your own PHP-VM:
 - Clone the project and create a ```.env``` file in the project root with your environmental variables
 - Run ```vagrant up --provider=digital_ocean``` in the project folder to create your droplet
 
+### AWS Instance
+
+*Comming soon*
+
 Now you can run ```vagrant ssh``` to SSH into the virtual machine and use Composer to install anything you like.
