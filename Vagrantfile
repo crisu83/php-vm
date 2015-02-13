@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider :virtualbox do |provider, override|
     override.vm.box = "ubuntu/trusty64"
-    override.vm.network "forwarded_port", guest: 80, host: ENV['PORT']
+    override.vm.network "forwarded_port", guest: 80, host: ENV['PORT'] || 1337
   end
 
   config.vm.provider :digital_ocean do |provider, override|
