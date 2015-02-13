@@ -29,7 +29,7 @@ Follow these steps to setup your own PHP-VM:
 - Install the Vagrant-Env plugin by running ```vagrant plugin install vagrant-env```
 - Create your account on [Digital Ocean](https://www.digitalocean.com/), confirm your email address and log in
 - Generate an API token in the **Apps & API** section of the management panel
-- Clone the project and create a ```.env``` file in the root of your project with your environmental variables
+- Clone the project and create a ```.env``` file in the project root with your environmental variables
 - Run ```vagrant up --provider=digital_ocean``` in the project folder to create your droplet
 
 Now you can run ```vagrant ssh``` to SSH into the virtual machine and use Composer to install anything you like.
